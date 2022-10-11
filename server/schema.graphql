@@ -1,0 +1,35 @@
+scalar Date
+
+type Query {
+  ukol(id: Int!): Ukol!
+  ukoly: [Ukol]
+}
+
+type Mutation {
+  pridejUkol(
+    id: Int!
+    popis: String!
+    splneny: Boolean!
+    dulezity: Boolean
+    datum: Date
+    poznamka: String
+  ): Ukol!
+  odeberUkol(id: Int!): Ukol!
+  upravUkol(
+    id: Int!
+    popis: String!
+    splneny: Boolean!
+    dulezity: Boolean
+    datum: Date
+    poznamka: String
+  ): Ukol!
+}
+
+type Ukol {
+  id: Int!
+  popis: String!
+  splneny: Boolean!
+  dulezity: Boolean
+  datum: Date
+  poznamka: String
+}
